@@ -23,35 +23,6 @@ public class DatabaseManager {
         return instance;
     }
 
-    public String getOrderInfo(int orderNum) {
-        Statement stmt = null;
-        try {
-            stmt = myConnection.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        String query = "select * from order_api.order where order_id = " + Integer.toString(orderNum);
-        ResultSet rs = null;
-        try {
-            rs = stmt.executeQuery(query);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        String resultStr = "";
-        try {
-            while (rs.next()) {
-                resultStr += Integer.toString(rs.getInt("order_id")) + " ";
-                resultStr += rs.getDate("placement_date") + " ";
-                resultStr += rs.getString("customer_name");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return resultStr;
-    }
-
 
     public List<Map<String, Object>> queryDB(String query) {
         Statement stmt = null;

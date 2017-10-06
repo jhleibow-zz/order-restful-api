@@ -3,6 +3,7 @@ package com.lebo.orderApplication;
 import com.lebo.orderDatabase.DatabaseManager;
 
 import javax.xml.bind.annotation.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -27,10 +28,6 @@ public class Order
 
     public int getId() {
         return id;
-    }
-
-    public String getOrderNumStr() {
-        return "Your Order Number is: " + Integer.toString(id);
     }
 
     public void setId(int id) {
@@ -65,22 +62,14 @@ public class Order
         this.items.add(item);
     }
 
-//    public String getOrderInfo() {
-//        DatabaseManager myDatabaseManager = DatabaseManager.getInstance();
-//        try {
-//            return myDatabaseManager.myConnection.getSchema();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return "";
-//    }
-
-//    public String getOrderHtml() {
-//        DatabaseManager myDatabaseManager = DatabaseManager.getInstance();
-////        return "<!DOCTYPE html><html><head><meta charset='utf - 8'><title>Orders</title></head><body><h1>" + getOrderNumStr() + "</h1></body></html>";
-//        return "<!DOCTYPE html><html><head><meta charset='utf - 8'><title>Orders</title></head><body><h1>" + myDatabaseManager.getOrderInfo(id) + "</h1></body></html>";
-//
-//    }
-
+    public BigDecimal getOrderTotalCost() {
+        BigDecimal result = new BigDecimal(0);
+        if (items == null) {
+            return new BigDecimal(-1);
+        }
+        for (Item item: items){
+            result = result.add(item.getCost().multiply(item.getCount()));
+        }
+        return result;
+    }
 }
