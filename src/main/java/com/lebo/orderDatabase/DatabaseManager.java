@@ -6,11 +6,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
+/**
+ * Class to manage database interaction.
+ *
+ * COPYRIGHT (C) 2017 John Leibowitz. All Rights Reserved.
+ * @author John Leibowitz
+ * @version 1.00
+ */
+
 public class DatabaseManager {
 
     private static DatabaseManager instance;
 
-    private Connection myConnection;
+    private final Connection myConnection;
 
     private DatabaseManager() {
         myConnection = ConnectionFactory.getMySQLConnection();
@@ -34,7 +42,7 @@ public class DatabaseManager {
 
         ResultSet resultSet = null;
         try {
-            resultSet = stmt.executeQuery(query);
+            resultSet = stmt != null ? stmt.executeQuery(query) : null;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -42,12 +50,17 @@ public class DatabaseManager {
 
         ResultSetMetaData metaData = null;
         try {
-            metaData = resultSet.getMetaData();
+            metaData = resultSet != null ? resultSet.getMetaData() : null;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         List<Map<String, Object>> results = new ArrayList<>();
+
+        if (resultSet == null || metaData == null) {
+            return results;
+        }
+
         try {
             while (resultSet.next()) {
                 Map<String,Object> oneRow = new HashMap<>();

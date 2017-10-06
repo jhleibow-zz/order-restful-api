@@ -3,6 +3,13 @@ package com.lebo.orderApplication;
 import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
 
+/**
+ * Simple JAXB class to represent total cost.
+ *
+ * COPYRIGHT (C) 2017 John Leibowitz. All Rights Reserved.
+ * @author John Leibowitz
+ * @version 1.00
+ */
 
 @XmlRootElement(name="total_cost")
 @XmlAccessorType(XmlAccessType.FIELD)

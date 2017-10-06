@@ -5,11 +5,20 @@ import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 
+
+/**
+ * This class implements the JAX-RS application.
+ *
+ * COPYRIGHT (C) 2017 John Leibowitz. All Rights Reserved.
+ * @author John Leibowitz
+ * @version 1.00
+ */
+
 @ApplicationPath("/order")
 public class OrderApplication extends Application {
 
-    private Set<Object> singletons = new HashSet<Object>();
-    private Set<Class<?>> empty = new HashSet<Class<?>>();
+    private final Set<Object> singletons = new HashSet<>();
+    private final Set<Class<?>> empty = new HashSet<>();
 
     public OrderApplication() {
         singletons.add(new OrderResource());

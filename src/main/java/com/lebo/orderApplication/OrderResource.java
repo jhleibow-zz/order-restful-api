@@ -18,13 +18,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-//import org.glassfish.jersey.client.JerseyClientBuilder;
+
+/**
+ * Class that provides payloads through JAX-RS for the order resource.
+ * Data for resource is provided from DatabaseManager class.
+ * Order, Item, and TotalCost classes use JAXB to produce XML payload.
+ *
+ * COPYRIGHT (C) 2017 John Leibowitz. All Rights Reserved.
+ * @author John Leibowitz
+ * @version 1.00
+ */
 
 @Path("/")
 public class OrderResource
 {
 
-    Client client = ClientBuilder.newClient();
+    private final Client client = ClientBuilder.newClient();
 
     @GET
     @Path("/{order_id}")

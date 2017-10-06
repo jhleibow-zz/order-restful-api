@@ -4,10 +4,17 @@ package com.lebo.orderApplication;
 import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
 
+/**
+ * Simple JAXB class to represent an Item in an Order.
+ *
+ * COPYRIGHT (C) 2017 John Leibowitz. All Rights Reserved.
+ * @author John Leibowitz
+ * @version 1.00
+ */
 
 @XmlRootElement(name="item")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Item {
+class Item {
 
     @XmlAttribute
     private int id;

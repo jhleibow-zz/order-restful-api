@@ -1,12 +1,18 @@
 package com.lebo.orderApplication;
 
-import com.lebo.orderDatabase.DatabaseManager;
 
 import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Simple JAXB class to represent an Order.
+ *
+ * COPYRIGHT (C) 2017 John Leibowitz. All Rights Reserved.
+ * @author John Leibowitz
+ * @version 1.00
+ */
 
 @XmlRootElement(name = "order")
 @XmlAccessorType(XmlAccessType.FIELD)
