@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OrderRestfulAPI:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Orders.war">
+      <element id="artifact" artifact-name="OrderRestfulAPI:war exploded" />
+    </root>
+  </artifact>
+</component>
