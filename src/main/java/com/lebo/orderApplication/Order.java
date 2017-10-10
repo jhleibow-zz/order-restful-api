@@ -14,6 +14,7 @@ import java.util.List;
  * @version 1.00
  */
 
+@SuppressWarnings("unused")
 @XmlRootElement(name = "order")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Order

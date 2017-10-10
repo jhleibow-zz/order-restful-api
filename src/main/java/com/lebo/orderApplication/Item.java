@@ -12,6 +12,7 @@ import java.math.BigDecimal;
  * @version 1.00
  */
 
+@SuppressWarnings("unused")
 @XmlRootElement(name="item")
 @XmlAccessorType(XmlAccessType.FIELD)
 class Item {

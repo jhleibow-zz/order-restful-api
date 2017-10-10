@@ -55,9 +55,22 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.jboss.resteasy</groupId>-->
+            <!--<artifactId>resteasy-test-tjws</artifactId>-->
+            <!--<version>2.3.10.Final</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.jboss.logging</groupId>-->
+            <!--<artifactId>jboss-logging</artifactId>-->
+            <!--<version>3.1.2.GA</version>-->
+            <!--&lt;!&ndash;<version>3.3.1.Final</version>&ndash;&gt;-->
+        <!--</dependency>-->
+
     </dependencies>
 
     
